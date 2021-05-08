@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block head %} 
+{% load static %}
+<link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="farm-listings">
+    <a href="{% url 'blog-create' %}">Write a New Article</a>
+    <a href="{% url 'blog-list' %}">See Farm Listings</a>
+    
+
+</div>
+
+{% endblock %}

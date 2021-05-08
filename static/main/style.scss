@@ -1,0 +1,33 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 100;
+}
+#welcome {
+  width: 100vw;
+  height: 100vh;
+  background: black url("https://source.unsplash.com/zLDCovABxSk/1920x1080")
+    no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .welcome-text {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    color: white;
+    margin-bottom: 20%;
+    a,
+    .fa-facebook {
+      color: white;
+    }
+    .phone-number,
+    .facebook-link {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      padding-bottom: 20px;
+    }
+  }
+}

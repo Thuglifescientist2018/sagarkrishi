@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+
+{% block head %} 
+{% load static %}
+<title>Welcome to Sagar Krishi Farm</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+<link rel="stylesheet" href="{% static 'main/style.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<div id="welcome">
+    <div class="container" id="landing">
+        <div class="welcome-text">
+            <h1>Welcome to Sagar Krishi Farm</h1>
+            <div class="phone-number">
+                <a href="tel:9849350587">
+                <i class="fas fa-phone-volume fa-3x">
+                    9849350587
+                </i>
+                </a>
+
+            </div>
+            <div class="facebook-link">
+                <a href="https://www.facebook.com/sagar.ji.773981" target="popup" 
+                onclick="window.open('http://sagarkrishifarm.com','popup','width=600,height=600'); return true;">
+                <i class="fab fa-facebook fa-3x" ></i>sagar.ji.773981
+
+            </div>
+        </a>
+
+        </div>
+    </div>
+
+</div>
+<div class="latest-posts">
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,1 @@
+cd krishi_farm && cd Scripts && activate && cd.. && cd..

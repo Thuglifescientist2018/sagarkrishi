@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+
+{% endblock %} 
+
+
+{% block content %} 
+<form action="" method="POST"> {% csrf_token %}
+{{form.as_p}}
+{{form.media}}
+</form>
+{% endblock %}
+
+{% block scripts %} 
+
+{% endblock %}

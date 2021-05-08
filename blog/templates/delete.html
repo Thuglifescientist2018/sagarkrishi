@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+
+{% block head %}
+
+{% endblock %} 
+
+{% block content %} 
+<h1>Are you sure you want to delete "{{blog.title}}" ? </h1>
+<form method="post">{% csrftoken %}
+    <input type="submit" class="btn btn-danger" value="Delete">
+
+</form>
+<a href="javascript:history.back()" class="btn btn-secondary">No dont delete</a>
+{% endblock %} 
+
+
+{% block scripts %} 
+
+
+{% endblock %}

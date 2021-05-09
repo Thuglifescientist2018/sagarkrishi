@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
+{% load static %}
+<link rel="stylesheet" href="{% static 'blog/edit/edit.css' %}">
+<title> {{blog.title}}</title>
 
 {% endblock %} 
 
@@ -10,7 +12,8 @@
 <form action="" method="POST"> {% csrf_token %}
 {{form.as_p}}
 {{form.media}}
-</form>
+<button type="submit" class="btn btn-secondary">Edit<i class="fas fa-pencil-alt"></i>
+</button>
 {% endblock %}
 
 {% block scripts %} 

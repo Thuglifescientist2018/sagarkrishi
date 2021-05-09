@@ -1,6 +1,8 @@
 
+from django import http
+from django.http.response import HttpResponse, HttpResponseRedirect
 from blog.models import BlogPost
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .forms import BlogPostModelForm
 from django.core.paginator import Paginator
 
@@ -47,21 +49,39 @@ def detail(request, slug):
     return render(request, template_name, context)
 
 
-def delete(request, slug):
-    template_name = "delete.html"
-    blog = BlogPost.objects.get(slug=slug)
-
-    if request.POST == "submit":
-        blog.delete()
-    context = {"blog": blog}
-    return render(request, template_name)
-
-
 def edit(request, slug):
     template_name = "edit.html"
     blog = BlogPost.objects.get(slug=slug)
     form = BlogPostModelForm(request.POST or None, instance=blog)
+    if form.is_valid():
+        form.save()
     context = {
-        "form": form
+        "form": form,
+        "blog": blog
     }
+    return render(request, template_name, context)
+
+
+def delete(request, slug):
+    template_name = "delete.html"
+    blog = BlogPost.objects.get(slug=slug)
+    if request.method == "POST":
+        blog.delete()
+        return HttpResponse("""
+        <html>
+        <head></head>
+        <body>
+        <h1> Deleted ... :) </h1> 
+        <script>
+            function redirect(){ 
+                javascript:history.go(-2)
+                location.reload()
+            }
+            redirect();
+        </script>
+        </body>
+        </html>
+        
+        """)
+    context = {"blog": blog}
     return render(request, template_name, context)

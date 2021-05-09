@@ -1,0 +1,34 @@
+body {
+  overflow-x: hidden;
+}
+
+label[for="id_title"],
+label[for="id_content"] {
+  display: none;
+}
+
+#id_title {
+  padding: 10px;
+  font-size: large;
+  width: 80%;
+  border-radius: 20px;
+  margin: 0 5%;
+}
+
+#id_title:focus {
+  outline: none;
+}
+
+.django-ckeditor-widget {
+  width: 100vh !important;
+}
+
+.btn-success {
+  width: 30vw;
+  margin: 0 20%;
+}
+
+i {
+  margin: 0 10px;
+}
+/*# sourceMappingURL=blog-create.css.map */

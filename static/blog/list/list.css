@@ -1,3 +1,26 @@
+.btn-danger {
+  background: #e4d7d7;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.btn-secondary {
+  background: none;
+  border: 1px solid black;
+  color: black;
+}
+
+.btn-success {
+  background: none;
+  border: 1px solid green;
+  color: black !important;
+}
+
+.btn-warning {
+  background: none;
+  border: 1px solid yellow;
+}
+
 #blog-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7,7 +30,63 @@
       flex-wrap: wrap;
 }
 
+::-moz-selection {
+  background: #8ccce6;
+  color: #ddb1b1;
+}
+
+::selection {
+  background: #8ccce6;
+  color: #ddb1b1;
+}
+
 .card img {
   display: none;
+}
+
+.card-body {
+  background: #e6e6e6;
+  color: #076070;
+}
+
+.card-body a {
+  color: #167ab4;
+}
+
+.card-body .btn {
+  border-radius: 0%;
+}
+
+.list-heading {
+  font-size: larger;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #16b48d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #aadef3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7fbad1;
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin-left: 7%;
+    width: 100% !important;
+  }
 }
 /*# sourceMappingURL=list.css.map */

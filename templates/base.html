@@ -4,31 +4,74 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    {% block seo %}
+      <meta name="keywords" content="Sagar krishi farm, sagar agriculture, agriculture, agriculture farm damak, krishi farm damak, damak krishi farm, krishi farm, farm, jhapa krishi farm, damak, damak amdaa hospital, damak amda hospital, new amda road damak, amda road damak, amda road, damak jhapa, jhapa, cows, cows damak, pigs, pigs damak, chickens, chickens damk, honeybees, honeybees damak"/>
+  <meta name="description" content="Sagar Krishi farm is an agricultre based field in damak near new amda road damak jhapa reproducing chickens, pigs, cows situated near new amda road damak jhapa where there is amda hospital"/>
+  <meta name="subject" content="Damak Agricultural Farm">
+  <meta name="copyright"content="Sagar Krishi Farm">
+  <meta name="language" content="ES">
+  <meta name="robots" content="index,follow" />
+  <meta name="revised" content="Saturday, May 22th, 2021, 5:15 am" />
+  <meta name="abstract" content="Sagar Krishi farm is an agricultre based field in damak near new amda road damak jhapa reproducing chickens, pigs, cows situated near new amda road damak jhapa where there is amda hospital"/>
+  <meta name="subject" content="Damak Agricultural Farm">
+  <meta name="topic" content="Cows, Chickens and Pigs Damak">
+  <meta name="summary" content="cows, chickens and pigs farming, wheats">
+  <meta name="Classification" content="Business">
+  <meta name="author" content="Shashwat Dahaal, listentoyourwill@gmail@gmail.com">
+  <meta name="designer" content="Shashwat Dahal">
+  <meta name="copyright" content="2021">
+  <meta name="reply-to" content="listentoyourwill@gmail.com">
+  <meta name="owner" content="">
+  <meta name="url" content="http://www.sagarkrishifarm.com">
+  <meta name="identifier-URL" content="http://www.sagarkrishifarm.com">
+  <meta name="directory" content="submission">
+  <meta name="category" content="Agriculture">
+  <meta name="coverage" content="Worldwide">
+  <meta name="distribution" content="Global">
+  <meta name="rating" content="General">
+  <meta name="revisit-after" content="7 days">
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'base.css' %}">
+  {% endblock %}
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+  
     <!-- Bootstrap CSS -->
-   
+   <style>
+     body {
+       font-family: 'Itim', cursive !important;
+       overflow-x: hidden;
+       
+     }
+   </style>
     
     {% load static %}
     <link rel="stylesheet" href="{% static 'bootstrap5/css/bootstrap.min.css' %}">
       <link rel="stylesheet" href="{% static 'fontawesome-free-5.15.3-web/css/all.min.css' %}">
     <link rel="shortcut icon" href="{% static 'main/favicon.ico' %}">
+    
     {% block head %}
-  
     {% endblock %}
 
   </head>
   <body>
+ 
     {% include 'header/header.html' %} 
     {% block content %}
-
-
+    
+    
     {% endblock %}
     
+    {% include 'footer/footer.html' %} 
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
    <script src="{% static 'bootstrap5/js/bootstrap.min.js' %}"></script>
+   
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
@@ -39,5 +82,7 @@
     {% block scripts %}
 
     {% endblock %}
+    <!-- Messenger Chat Plugin Code -->
+    
   </body>
 </html>

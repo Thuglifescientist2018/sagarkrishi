@@ -1,9 +1,77 @@
+.btn-danger {
+  background: rgb(228, 215, 215);
+  color: black;
+  margin-bottom: 1rem;
+}
+.btn-secondary {
+  background: none;
+  border: 1px solid black;
+  color: black;
+}
+.btn-success {
+  background: none;
+  border: 1px solid green;
+  color: black !important;
+}
+.btn-warning {
+  background: none;
+  border: 1px solid yellow;
+}
 #blog-list {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
+::selection {
+  background: #8ccce6;
+  color: rgb(221, 177, 177);
+}
 
 .card img {
   display: none;
+}
+.card-body {
+  background: #e6e6e6;
+  color: rgb(7, 96, 112);
+  a {
+    color: #167ab4;
+  }
+  .btn {
+    border-radius: 0%;
+  }
+}
+
+.list-heading {
+  font-size: larger;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #16b48d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #aadef3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7fbad1;
+}
+
+// media queries
+
+@media (max-width: 768px) {
+  .card {
+    margin-left: 7%;
+    width: 100% !important;
+  }
 }

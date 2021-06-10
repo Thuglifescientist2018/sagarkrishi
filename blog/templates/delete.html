@@ -2,15 +2,24 @@
 
 {% block head %}
 <title>{{blog.title}}</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'blog/delete/delete.css' %}">
 {% endblock %} 
 
 {% block content %} 
-<h1>Are you sure you want to delete "{{blog.title}}" ? </h1>
-<form method="POST">  {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Delete</button>
+<div class="container" style="min-height: 85vh;">
+    <h1>Are you sure you want to delete "{{blog.title}}" ? </h1>
+    <div class="wrapper">
+        <form method="POST">  {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Delete</button>
+        
+        </form>
+    
+        <a href="javascript:history.back()" class="btn btn-secondary">No dont delete</a>
 
-</form>
-<a href="javascript:history.back()" class="btn btn-secondary">No dont delete</a>
+    </div>
+
+</div>
 {% endblock %} 
 
 

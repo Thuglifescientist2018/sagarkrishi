@@ -1,11 +1,25 @@
 {% extends 'base.html' %}
 {% block head %} 
 <title>{{blog.title}}</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'read.css' %}">
 {% endblock %} 
+{% block seo %}
+<meta name="keywords" content="{{keywords}}">
+<meta name="description" content="{{description}}">
+
+{% endblock %}
 
 {% block content %} 
-<h1>{{blog.title}}</h1>
-{{blog.content|safe}}
+<div class="container">
+    <h1>{{blog.title}}</h1>
+    {{blog.content|safe}}
+    {% if user.is_authenticated %}
+    <a href="{% url 'blog-delete' blog.slug %}" class="btn btn-danger">Delete</a>
+    <a href="{% url 'blog-edit' blog.slug %}" class="btn btn-secondary">Edit</a>
+    {% endif %}
+</div>
+
 {% endblock %}
 
 {% block scripts %} 

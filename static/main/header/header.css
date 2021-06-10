@@ -1,0 +1,33 @@
+.navbar {
+  background: #e9e6e6;
+  min-height: 100px;
+  -webkit-box-shadow: 4px 4px 4px darkgrey;
+          box-shadow: 4px 4px 4px darkgrey;
+}
+
+.navbar .navbar-brand {
+  position: relative;
+  border: 3px solid black;
+  padding: 10px;
+  -webkit-box-shadow: 10px 10px 5px grey;
+          box-shadow: 10px 10px 5px grey;
+}
+
+.navbar .navbar-brand::before {
+  content: "";
+  position: absolute;
+  right: -10%;
+  bottom: 3rem;
+  height: 20px;
+  width: 120%;
+  border-style: solid;
+  border-width: 20px 20px 20px 20px;
+  border-color: transparent transparent grey transparent;
+  -webkit-box-shadow: 0 4px 2px -2px #584c4c;
+          box-shadow: 0 4px 2px -2px #584c4c;
+}
+
+.navbar .nav-item::hover {
+  background: steelblue !important;
+}
+/*# sourceMappingURL=header.css.map */

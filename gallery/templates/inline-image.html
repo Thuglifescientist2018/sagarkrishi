@@ -1,0 +1,9 @@
+<div class="card" style="width: 20rem; margin: 20px auto;padding-bottom: 0px;">
+        <a href="{{img}}" data-lightbox="gallery-photo" data-title="{{data_title}}">
+        <img src="{{img}}" class="card-img-top" alt="{{data_title}}">
+       
+          <a href="{% url 'delete-image' slug %}" class="btn btn-danger">Delete 🚫</a>
+          <a href="{% url 'update-image' slug %}" class="btn btn-secondary">Edit Photo 🖊</a>
+
+</a>
+      </div> 

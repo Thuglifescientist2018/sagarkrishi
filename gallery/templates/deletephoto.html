@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>{{photo.title}}</title>
+{% endblock %}
+{% block content %} 
+<div class="container" style="min-height: 85vh">
+<form method="POST"> {% csrf_token %}
+        <h2>Are you sure you want to delete "{{photo.title}}"</h2>
+        <button class="btn btn-danger" type="submit">Delete</button>
+        
+    </form>
+    <a class="btn btn-secondary" href="javascript:history.go(-1)">Take me back</a>
+</div>
+
+{% endblock %} 
+

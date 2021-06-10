@@ -1,0 +1,29 @@
+#about {
+  padding: 2%;
+  padding-bottom: 13%;
+}
+#about .container .wrapper {
+  display: flex;
+}
+.about-text {
+  width: 50%;
+}
+.about-img {
+  background-color: rgba(0, 155, 200, 0.8);
+  width: 50%;
+  border-radius: 30%;
+  border: 2px solid black;
+  img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .about-img,
+  .about-text {
+    width: 100%;
+  }
+  #about .container .wrapper {
+    flex-direction: column;
+  }
+}

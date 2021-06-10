@@ -1,33 +1,26 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 100;
+  background-color: #e6e6e6 !important;
 }
-#welcome {
-  width: 100vw;
-  height: 100vh;
-  background: black url("https://source.unsplash.com/zLDCovABxSk/1920x1080")
-    no-repeat center center/cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 
-  .welcome-text {
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 2rem;
-    color: white;
-    margin-bottom: 20%;
-    a,
-    .fa-facebook {
-      color: white;
+#welcome {
+  position: relative;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  .phone-number,
+  .facebook-link {
+    border: 2px solid black;
+    padding: 10vw;
+    i {
+      font-size: 10vw;
+
+      color: steelblue !important;
     }
-    .phone-number,
-    .facebook-link {
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-      padding-bottom: 20px;
-    }
+  }
+  .phone_fb {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
 }

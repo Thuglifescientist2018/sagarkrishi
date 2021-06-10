@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ds(yerb#8%=(u#3y0tn55#8pds5_e$qwp%k_6bfberg#3#cd&m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -39,8 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'corsheaders',
     'blog',
-    'ckeditor'
+    'ckeditor',
+    'searches',
+    'about',
+    'gallery',
+
+
 ]
 
 
@@ -52,6 +58,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'sagar_krishi.urls'
@@ -110,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kathmandu'
 
 USE_I18N = True
 
@@ -123,6 +132,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+LOCAL_STATIC_CDN_PATH = os.path.join(BASE_DIR, "static_cdn_test")
+STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, "static")
+MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, "media")
+MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
@@ -140,3 +153,5 @@ CKEDITOR_CONFIGS = {
         'toolbarCanCollapse': True,
     },
 }
+
+CORS_ALLOW_ALL_ORIGINS = True

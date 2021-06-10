@@ -3,40 +3,138 @@
 
 
 {% block head %} 
+
 {% load static %}
 <title>Welcome to Sagar Krishi Farm</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'main/style.css' %}">
 
 {% endblock %}
 
 {% block content %}
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      {% for g in gallery %}
+      {% if forloop.first %}
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ forloop.counter0 }}" class="active" aria-current="true" aria-label="Slide {{ forloop.counter0|add:1 }}"></button>
+      {% else %}
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ forloop.counter0 }}" aria-label="Slide {{ forloop.counter0|add:1 }}"></button>
+      {% endif %}
+
+      {% endfor %}
+    
+  
+    </div>
+    <div class="carousel-inner">
+      {% for g in gallery %}
+       {% if forloop.first %}
+      <div class="carousel-item active">
+        <img src="{{g.image.url}}"  height="500" class="d-block w-100" alt="First image">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{g.title}}</h5>
+          <p>{{g.subtitle}}</p>
+        </div>
+      </div>
+      {% else %}
+      <div class="carousel-item">
+        <img src="{{g.image.url}}"  height="500" class="d-block w-100" alt="First image">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>{{g.title}}</h5>
+          <p>{{g.subtitle}}</p>
+        </div>
+      </div>
+
+      {% endif %}
+      {% endfor %}
+    
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
 <div id="welcome">
     <div class="container" id="landing">
         <div class="welcome-text">
             <h1>Welcome to Sagar Krishi Farm</h1>
-            <div class="phone-number">
-                <a href="tel:9849350587">
-                <i class="fas fa-phone-volume fa-3x">
-                    9849350587
-                </i>
-                </a>
-
-            </div>
-            <div class="facebook-link">
-                <a href="https://www.facebook.com/sagar.ji.773981" target="popup" 
-                onclick="window.open('http://sagarkrishifarm.com','popup','width=600,height=600'); return true;">
-                <i class="fab fa-facebook fa-3x" ></i>sagar.ji.773981
+            {% if not user.is_authenticated %}
+                <a href="/admin">Admin Login</a>
+            {% else %}
+            <p>Welcome {{user}}</p>
+            <a class="btn btn-dark m-2" href="{% url 'logout' %}">Log Out</a>
+            
+            {% endif %}
+            <div class="phone_fb">
+              <div class="phone-number">
+                  <a href="tel:9849350587">
+                  <i class="fas fa-phone-volume fa-3x">
+                      
+                  </i>
+                  </a>
+  
+              </div>
+              <div class="facebook-link">
+                  <a href="https://www.facebook.com/sagar.ji.773981" target="popup" 
+                  onclick="window.open('http://sagarkrishifarm.com','popup','width=600,height=600'); return true;">
+                  <i class="fab fa-facebook fa-3x" ></i>sagar.ji.773981
+  
+              </div>
 
             </div>
         </a>
 
         </div>
     </div>
+    
 
 </div>
-<div class="latest-posts">
+<div style="clear: both"></div>
+<section id="whatweproduce">
+  <div class="container">
+    <h1>What we Produce</h1>
+    <div class="card">
+      <div class="card-header">
+        Dairy Products
+      </div>
+      <img src="https://source.unsplash.com/uSqsYy-PIaM/1600x900">
 
-</div>
+      <div class="card-body">
+        <h5 class="card-title">Milk, Ghee</h5>
+        <p class="card-text">We Produce Milk Ghee right from the cows.</p>
+        <a href="#" class="btn btn-dark">Coming Soon</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        Bees
+      </div>
+      <img src="https://source.unsplash.com/Bgae-sqbe_g/1600x900">
+      <div class="card-body">
+        <h5 class="card-title">Original Honey is what we need</h5>
+        <p class="card-text">With several duplicate sugarcoated honey in the market, we Produce organic honey from honeybees.</p>
+        <a href="#" class="btn btn-dark">Coming Soon</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        Eggs
+      </div>
+      <img src="https://source.unsplash.com/onxjrr3Erwc/1600x900">
+      <div class="card-body">
+        <h5 class="card-title">An Egg in the morning, keeps our day running</h5>
+        <p class="card-text">Whether you work in office or just want to start your day, milk and egg might keep you charged</p>
+        <a href="#" class="btn btn-dark">Available</a>
+      </div> 
+    </div>
+  </div>
+</section>
+
 
 {% endblock %}

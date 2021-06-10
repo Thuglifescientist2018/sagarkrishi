@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS;AACT,YAAY,CAAC;EACX,OAAO,EAAE,IAAI;EACb,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI;EACZ,aAAa,EAAE,IAAI;CACpB",
+    "sources": [
+        "editgallery.scss"
+    ],
+    "names": [],
+    "file": "editgallery.css"
+}

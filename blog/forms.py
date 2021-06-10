@@ -9,10 +9,11 @@ class BlogPostModelForm(forms.ModelForm):
         # if slug is displayed then it will not put the slug value from def save() from models.py
         widgets = {
             'title': forms.TextInput(attrs={'placeholder': 'Give a title to  your article'}),
+            'publish_date': forms.TextInput(attrs={'placeholder': 'Enter current date when the article is written, Eg. 10/05/2021'}),
             'content': forms.Textarea(
                 attrs={'placeholder': 'Write about your article'}),
         }
-        fields = ["title", "content"]
+        fields = ["title", "content", "publish_date"]
 
     def clean_title(self, *args, **kwargs):
         instance = self.instance

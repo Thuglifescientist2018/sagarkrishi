@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'main/about/about.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+<div id="about">
+    <div class="container">
+        <h1>About Sagar Krishi Farm</h1>
+        {% if user.is_authenticated %}
+        <a href="{% url 'about-edit' %}" class="btn btn-secondary">Edit 🖊</a>
+        {% endif %}
+        <div class="wrapper">
+            
+            <div class="about-text">
+                {% block about_text %}
+                <h2 class="l-heading">{{about.main_title}}</h2>
+                {{about.description | safe}}
+                {% endblock %}
+            </div>
+            <div class="about-img">
+                {% block about_image %}
+                <img src="{{about.about_image.url}}" alt="Sagar krishi farm about">
+                {% endblock %}
+                
+            </div>
+         
+            
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+
+
+{% endblock %}

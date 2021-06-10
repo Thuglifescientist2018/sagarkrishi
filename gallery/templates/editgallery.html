@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'editgallery.css' %}">
+{% endblock %} 
+{% block content %}
+<h1>Edit {{gallery.title}} </h1>
+<div class="container">
+    <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+    {{form.as_p}} {% csrf_token %}
+    <button type="submit" class="btn btn-secondary">Edit </button>
+    
+    </form>
+
+</div>
+{% endblock %} 
+
+
+{% block scripts %} 
+
+
+{% endblock %}

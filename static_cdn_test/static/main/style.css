@@ -1,0 +1,47 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 100;
+}
+
+#welcome {
+  width: 100vw;
+  height: 100vh;
+  background: black url("https://source.unsplash.com/zLDCovABxSk/1920x1080") no-repeat center center/cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+#welcome .welcome-text {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  color: white;
+  margin-bottom: 20%;
+}
+
+#welcome .welcome-text a,
+#welcome .welcome-text .fa-facebook {
+  color: white;
+}
+
+#welcome .welcome-text .phone-number,
+#welcome .welcome-text .facebook-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+  padding-bottom: 20px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,10 @@
+h1 {
+  font-size: larger;
+}
+.container {
+  padding: 3%;
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
